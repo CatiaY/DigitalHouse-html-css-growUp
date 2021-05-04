@@ -1,6 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
-@font-face {
+/* @font-face {
   font-family: Roboto;
   src: url(/fonts/Roboto/Roboto-Regular.ttf);
 }
@@ -8,7 +9,7 @@
 @font-face {
   font-family: Roboto-bold;
   src: url(/fonts/Roboto/Roboto-Bold.ttf);
-}
+} */
  
 :root{
   --verde: #00796b;
@@ -36,7 +37,7 @@ header {
   align-content:space-between;
   justify-content: space-between;   
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 0 80px;
+  padding: 0 80px;  
 }
 
 header .logo {
@@ -108,8 +109,9 @@ button {
 }
 
 .texto h1 {
-  color: var(--verde);
-  font-family: Roboto-bold;
+  color: var(--verde);  
+  font-family: Roboto;
+  font-weight: 900;
   font-size: 48px;
   text-transform: uppercase;
   padding-bottom: 50px;  
@@ -133,7 +135,8 @@ button {
 main h1 {
   color: var(--verde);
   font-size: 64px;
-  font-family: Roboto-Bold;
+  font-family: Roboto;
+  font-weight: 900;
   text-transform: uppercase;
   padding-bottom: 70px;
 }
@@ -142,7 +145,8 @@ main h1 {
 article h2 {
   color: var(--verde);
   font-size: 36px;
-  font-family: Roboto-Bold;
+  font-family: Roboto;
+  font-weight: 900;
   text-transform: uppercase;
   padding-top: 50px;
 }
@@ -175,7 +179,8 @@ section.marketing h2,
 section.consultoria-ux h2 {
   color: var(--verde);
   font-size: 36px;
-  font-family: Roboto-Bold;
+  font-family: Roboto;
+  font-weight: 900;
   text-transform: uppercase;
   padding-top: 50px;
 }
