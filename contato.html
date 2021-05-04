@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Grow Up - Contato</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Logo Grow Up">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="sobre.html">SOBRE</a></li>
+          <li><a href="servicos.html">SERVIÇOS</a></li>
+          <li><a href="contato.html">CONTATO</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main>
+      <!-- 
+        <section>
+          <div class="container">
+            restante abaixo
+       -->
+      <h1>Contato</h1>
+      <section>
+        <div class="contato">
+          <!-- 
+            Não há necessidade do atributo action porque o envio do form será para a própria página
+
+            method default é GET, as informações do form são exibidas no caminho url, por exemplo: http://127.0.0.1:5500/contato.html?nome=catia&email=catia%40teste.com&mensagem=oi 
+            
+            Por isso, é aconselhável usar o POST, para q informações sensíveis não sejam exibidas 
+
+            As informações enviadas são exibidas no browser em Inspect > Network > Nome da página > Headers > Form data
+            Sempre verificar quais requisições a página está fazendo para ver se ela não está fazendo mais requisições do que o necessário
+            
+            As checagens de frontend são muito frágeis, pois podem ser burladas facilmente pelo inspetor do browser, que permite ao usuário modificar o html e deixá-lo funcional
+          -->
+          <form method="POST" action="contato.html">
+            <!-- for indica o id do input associado ao label -->
+            <label for="nome">Nome</label>
+            <!-- id é obrigatório e name é o atributo ou chave (de chave/valor) que o form espera 
+            value é um valor default 
+            readonly não permite alterar, geralmente é usado para somente exibir uma informação 
+          -->
+            <input type="text" id="nome" name="nome" value="Anônimo" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem</label>
+            <!-- cols="30" indica largura e rows="10" indica altura, mas podem ser removidos do textarea pois esse controle é feito pelo css  -->
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <p>Selecione um assunto:</p>
+
+            <div class="radio">
+              <!-- radio permite escolher somente um, checkbox permite selecionar vários
+                name agrupa as opções -->
+              <div>
+                <input type="radio" name="assunto" id="assunto_elogio" value="Elogio" checked>
+                <label for="assunto_elogio">Elogio</label>
+              </div>
+
+              <div>
+                <input type="radio" name="assunto" id="assunto_reclamacao" value="Reclamação">
+                <label for="assunto_reclamacao">Reclamação</label>
+              </div>
+
+              <div>
+                <input type="radio" name="assunto" id="assunto_sugestao" value="Sugestão">
+                <label for="assunto_sugestao">Sugestão</label>
+              </div>
+
+              <div>
+                <input type="radio" name="assunto" id="assunto_outro" value="Outro">
+                <label for="assunto_outro">Outro</label>
+              </div>
+            
+            </div>
+
+            <!-- Botão para enviar dados -->
+            <!-- Essa é uma das opções, porém não é recomendado, pois o botão é mais semântico e possui mais opções de configuração: <input type="submit" value=""> -->
+            <button type="submit">Enviar</button>
+          </form>
+
+          <div class="info">
+            <p>Email: <a href="mailto:contato@growup.com">contato@growup.com</a></p>
+            <p>Telefone: 
+              <a href="tel:1198984242">(11) 9898-4242</a>
+              <!-- target="_blank" abre o link em uma nova aba 
+              
+                Pode-se utilizar gerador de links caso queira inserir mensagens a serem enviadas via WhatsApp, por exemplo, nesse site:
+                https://www.convertte.com.br/gerador-link-whatsapp/
+              -->
+              <!-- <a href="https://wa.me/+551198984242" target="_blank">(WhatsApp)</a> -->
+              <a href="https://api.whatsapp.com/send?phone=551198984242&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20meu%20site." target="_blank">(WhatsApp)</a>
+            </p>
+
+            <!-- Obtido via Google Maps: 
+            1) Obter endereço no Google Maps > Compartilhar (Share) > Incorporar um mapa (Embed a map) > Copiar o link gerado -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.316121551891!2d-46.71217514900059!3d-23.628847384574026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce512089330569%3A0x2a1eb6323d544e63!2sAvanade!5e0!3m2!1sen!2sbr!4v1620050789490!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer>
+      <span>copyright - Grow Up</span>
+    </footer>
+    
+  </body>
+
+</html>

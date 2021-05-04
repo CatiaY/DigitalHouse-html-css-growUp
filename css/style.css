@@ -1,0 +1,277 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); */
+
+@font-face {
+  font-family: Roboto;
+  src: url(/fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-bold;
+  src: url(/fonts/Roboto/Roboto-Bold.ttf);
+}
+ 
+:root{
+  --verde: #00796b;
+  --cinza: #9B9B9B;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;  
+}
+
+/* Algumas das configurações também podem ser feitas no body */
+body {  
+  max-width: 100%;
+  font-family: Roboto;
+  font-size: 24px;
+}
+
+header {
+  background-color: var(--verde);
+  display: flex;  
+  align-items: center;
+  align-content:space-between;
+  justify-content: space-between;   
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0 80px;
+}
+
+header .logo {
+  padding-top: 10px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding: 15px;  
+}
+
+header nav ul li a {
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+footer {  
+  background-color: #c4c4c4;  
+  text-align: center;  
+  padding: 20px;  
+}
+
+footer span {
+  color: #ffffff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;    
+  margin: auto;
+  padding: 100px;
+}
+
+main img {
+  height: 500px;
+}
+
+button {
+  border: none;
+  background-color: var(--verde);
+  color: white;
+  text-transform: uppercase;  
+  padding: 10px;
+  width: 100%;
+  font-size: 24px;
+}
+
+/************************************************************************/
+/* HOME
+/************************************************************************/
+.index {
+  display: flex;
+  align-items: center;
+  align-content: space-between;  
+  margin: 0 auto;  
+  height: 73vh;
+  flex-grow: 1;
+}
+
+.texto {  
+  color: var(--cinza);
+  font-size: 24px;
+}
+
+.texto h1 {
+  color: var(--verde);
+  font-family: Roboto-bold;
+  font-size: 48px;
+  text-transform: uppercase;
+  padding-bottom: 50px;  
+}
+
+.texto button {
+  margin-top: 40px;
+}
+
+/************************************************************************/
+/* SOBRE
+/************************************************************************/
+.sobre-intro {
+  display: flex;
+  align-content: space-between;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+.sobre-intro h1,
+main h1 {
+  color: var(--verde);
+  font-size: 64px;
+  font-family: Roboto-Bold;
+  text-transform: uppercase;
+  padding-bottom: 70px;
+}
+
+.sobre-intro .texto h2,
+article h2 {
+  color: var(--verde);
+  font-size: 36px;
+  font-family: Roboto-Bold;
+  text-transform: uppercase;
+  padding-top: 50px;
+}
+
+.sobre-intro .texto ol {
+  padding-top: 30px;
+  padding-left: 25px;
+}
+
+section.sobre-video iframe {
+  width: 100%;
+  height: 900px;
+  margin: 50px 0;
+}
+
+section.missao-visao-valores {
+  text-align: center;
+}
+
+section.missao-visao-valores article p {
+  padding: 30px 30px;
+}
+
+
+/************************************************************************/
+/* SERVIÇOS
+/************************************************************************/
+section.desenvolvimento h2,
+section.marketing h2,
+section.consultoria-ux h2 {
+  color: var(--verde);
+  font-size: 36px;
+  font-family: Roboto-Bold;
+  text-transform: uppercase;
+  padding-top: 50px;
+}
+
+section.desenvolvimento,
+section.marketing,
+section.consultoria-ux {
+  display: flex;
+  justify-content: space-between;  
+  padding: 20px 0 80px 0;
+}
+
+section.marketing {
+  flex-direction: row-reverse;
+}
+
+section.desenvolvimento img,
+section.marketing img,
+section.consultoria-ux img {
+  width: 700px;    
+}
+
+/************************************************************************/
+/* CONTATO
+/************************************************************************/
+.contato {
+  display: flex;
+  justify-content: space-between;
+  color: var(--cinza);
+  flex-grow: 1;  
+}
+
+.contato .info {
+  padding: 15px 30px;
+}
+
+.contato .info iframe {
+  height: 400px;
+  width: 700px;
+  max-width: 100%;
+  /* Para responsividade: Se a tela for menor do que 700px, ele ocupará 100% */
+}
+
+form p {
+  margin-top: 30px;
+}
+
+/************************************************************************/
+/* ORÇAMENTO
+/************************************************************************/
+.orcamento form {
+  display: flex;
+  flex-direction: column;
+  color: var(--cinza);
+}
+
+/************************************************************************/
+/* FORMULÁRIO
+/************************************************************************/
+
+/* Aplica o estilos a todos os inputs, menos aqueles que possuem o type radio, pois ele não pode ser width 100%, ele precisa estar na mesma linha de seu label */
+form input:not([type="radio"]):not([type="checkbox"]), 
+form textarea,
+form select {
+  width: 100%;
+  padding: 5px;
+  font-size: 24px;
+}
+
+/* Troca a cor da borda do input de quando o campo estiver selecionado */
+form input:not([type="radio"]):not([type="checkbox"]):focus,
+form textarea:focus,
+form select:focus {
+  outline-color: var(--verde);
+}
+
+form textarea {
+  resize: none;
+}
+
+/* Quando a tag é do tipo inline, a margin não influencia, por isso o display foi alterado para inline-block */
+form label {
+  display: inline-block;
+  margin: 20px 0 5px 0;
+}
+
+form button {      
+  margin: 20px 0;
+}
+
+form fieldset {  
+  border-color: rgb(219, 219, 219);
+  padding: 0 15px 15px 15px;
+  margin-top: 20px;
+}
+
+fieldset input {  
+  margin-left: 20px;
+}
