@@ -33,11 +33,16 @@ body {
 header {
   background-color: var(--verde);
   display: flex;  
-  align-items: center;
-  align-content:space-between;
+  align-items: center;  
   justify-content: space-between;   
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 0 80px;  
+  padding: 0 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* z-index indica a profundidade em que o objeto se encontra. O valor default é 0 */
+  z-index: 10;
 }
 
 header .logo {
@@ -52,6 +57,20 @@ header nav ul {
 header nav ul li {
   display: inline-block;
   padding: 15px;  
+}
+
+header nav ul li a:after {    
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  display: block;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+header nav ul li:hover a:after {  
+  width: 100%;  
 }
 
 header nav ul li a {
@@ -74,6 +93,7 @@ main {
   display: flex;
   flex-direction: column;    
   margin: auto;
+  margin-top: 150px;
   padding: 100px;
 }
 
@@ -82,6 +102,7 @@ main img {
 }
 
 button {
+  display: inline-block;
   border: none;
   background-color: var(--verde);
   color: white;
@@ -89,7 +110,18 @@ button {
   padding: 10px;
   width: 100%;
   font-size: 24px;
+  /* all indica que a transição será feita em todas as propriedades */
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
+
+button:hover {
+  background-color: aquamarine;
+  width: 100.5%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: black;  
+}
+
 
 /************************************************************************/
 /* HOME
@@ -279,4 +311,14 @@ form fieldset {
 
 fieldset input {  
   margin-left: 20px;
+}
+
+@keyframes flutuar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.img-destaque {
+  animation: flutuar 3s infinite;
 }
